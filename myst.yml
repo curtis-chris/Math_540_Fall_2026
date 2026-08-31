@@ -3,11 +3,18 @@ version: 1
 project:
   id: bc3a4b10-4251-40f9-be1f-557b6ff098f2
   title: Mathematical Tools in Data Science and Machine Learning 
-  description:  This is the course notes for MATH 540 at San Diego State University.
+  description:  These are the course notes for MATH 540 at San Diego State University.
   # keywords: []
   # authors: []
   github: https://github.com/curtis-chris/Math_540_Fall_2026
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+  toc:
+    - file: ./chapter_files/index.md
+    - title: Mathematical Tools in Data Science and Machine Learning 
+    - file: ./chapter_files/unsupervised_learning.md
+      children:
+      - title: Linear Algebra for the Mathematical Data Scientist  
+      - file: ./Lecture_Notes_and_Code/Linear_Algebra_for_Data_Scientists.ipynb
 site:
   template: book-theme
   # options:
