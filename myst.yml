@@ -15,6 +15,10 @@ project:
       children:
       - title: Linear Algebra for the Mathematical Data Scientist  
       - file: ./Lecture_Notes_and_Code/Linear_Algebra_for_Data_Scientists.ipynb
+      - title: Image Compression via Singular Value Decomposition 
+      - file: ./Lecture_Notes_and_Code/SVD_and_Image_Analysis.ipynb
+      - title: Introduction to k-Means Clustering 
+      - file: ./Lecture_Notes_and_Code/Applications_of_the_SVD_and_Cluster_Analysis.ipynb
 site:
   template: book-theme
   # options:
