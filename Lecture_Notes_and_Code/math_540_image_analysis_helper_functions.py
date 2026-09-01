@@ -1,5 +1,6 @@
 import os
 import numpy as np
+import cv2
 import matplotlib.pyplot as plt
 from skimage import io
 
@@ -12,16 +13,36 @@ def gray_scale_convert(image):
     return rescaled_image
 
 # We need to be able to pass in a directory and build an image list
-def file_builder(directory):
+def file_builder(data_path):
     image_list = []
-    # iterate over files in
-    # that directory
-    for root, dirs, files in os.walk(directory):
-        for filename in files:
-            if filename != "Readme":
-                input_image = gray_scale_convert(np.squeeze(io.imread(os.path.join(root, filename))) )
-                image_list.append( input_image )
-    return image_list
+    image_paths = []
+    labels = []
+
+    # 2. Define uniform target dimensions
+    IMG_WIDTH = 256
+    IMG_HEIGHT = 256
+    for root, dirs, files in os.walk(data_path):
+        for file in files:
+            # Ignore hidden system files like .DS_Store or READMEs
+            if file.startswith('.') or file.endswith('.txt'):
+                continue
+                
+            # Full path to the image
+            full_path = os.path.join(root, file)
+            image_paths.append(full_path)
+            # Read the image in grayscale mode (0)
+            img = cv2.imread(full_path, 0)
+        
+            if img is not None:
+                # Resize image to uniform dimensions
+                resized_img = cv2.resize(img, (IMG_WIDTH, IMG_HEIGHT))
+                image_list.append(gray_scale_convert(resized_img))
+                # Extract the label (e.g., 'subject01' from 'subject01.normal')
+                # Adjust the splitting logic depending on how Kaggle names the files
+                subject_label = file.split('.')[0] 
+                labels.append(subject_label)
+                
+    return image_list, labels
 
 # We would like to easily comapre different images to one another after we do various things to them.  
 def image_comparison(original_image, reduced_image):
