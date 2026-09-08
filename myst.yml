@@ -28,3 +28,6 @@ site:
   # options:
   #   favicon: favicon.ico
   #   logo: site_logo.png
+sphinx:
+  config:
+    myst_title_to_header: false
