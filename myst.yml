@@ -12,7 +12,6 @@ project:
     - title: Mathematical Tools in Data Science and Machine Learning 
     - file: ./chapter_files/index.md
     - title: Unsupervised Learning 
-    - file: ./chapter_files/unsupervised_learning.md
       children:
       - title: Linear Algebra for the Mathematical Data Scientist  
       - file: ./Lecture_Notes_and_Code/Linear_Algebra_for_Data_Scientists.ipynb
