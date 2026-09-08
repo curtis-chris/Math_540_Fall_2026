@@ -9,10 +9,10 @@ project:
   github: https://github.com/curtis-chris/Math_540_Fall_2026
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   toc:
-    - file: ./chapter_files/index.md
     - title: Mathematical Tools in Data Science and Machine Learning 
-    - file: ./chapter_files/unsupervised_learning.md
+    - file: ./chapter_files/index.md
     - title: Unsupervised Learning 
+    - file: ./chapter_files/unsupervised_learning.md
       children:
       - title: Linear Algebra for the Mathematical Data Scientist  
       - file: ./Lecture_Notes_and_Code/Linear_Algebra_for_Data_Scientists.ipynb
