@@ -1,0 +1,1 @@
+These are the course notes (moving towards a book) focusing on teaching mathematically grounded data science to upper-division undergraduates and graduate students.  
