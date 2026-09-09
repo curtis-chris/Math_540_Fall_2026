@@ -19,7 +19,6 @@ project:
       - file: ./Lecture_Notes_and_Code/SVD_and_Image_Analysis.ipynb
       - title: Introduction to k-Means Clustering 
       - file: ./Lecture_Notes_and_Code/Applications_of_the_SVD_and_Cluster_Analysis.ipynb
-    - file: ./chapter_files/signal_processing_and_decomposition.md
     - title: Signals, Processing, and Decomposition
       children:
       - file: ./Lecture_Notes_and_Code/FFT_Wavelets_and_Signal_Processing_Notes.ipynb
