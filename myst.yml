@@ -14,14 +14,19 @@ project:
     - title: Unsupervised Learning 
       children:
       - title: Linear Algebra for the Mathematical Data Scientist  
-      - file: ./Lecture_Notes_and_Code/Linear_Algebra_for_Data_Scientists.ipynb
+      - file: ./Lecture_Notes_and_Code/Unsupervised_Learning/Linear_Algebra_for_Data_Scientists.ipynb
       - title: Image Compression via Singular Value Decomposition 
-      - file: ./Lecture_Notes_and_Code/SVD_and_Image_Analysis.ipynb
+      - file: ./Lecture_Notes_and_Code/Unsupervised_Learning/SVD_and_Image_Analysis.ipynb
       - title: Introduction to k-Means Clustering 
-      - file: ./Lecture_Notes_and_Code/Applications_of_the_SVD_and_Cluster_Analysis.ipynb
+      - file: ./Lecture_Notes_and_Code/Unsupervised_Learning/Applications_of_the_SVD_and_Cluster_Analysis.ipynb
     - title: Signals, Processing, and Decomposition
       children:
-      - file: ./Lecture_Notes_and_Code/FFT_Wavelets_and_Signal_Processing_Notes.ipynb
+      - title: Fourier Transforms and Series
+      - file: ./Lecture_Notes_and_Code/Decompositions_Signal_Image_Processing/Fourier_Series_and_Transforms.ipynb
+      - title: Short Time Fourier Transforms and Signal Processing
+      - file: ./Lecture_Notes_and_Code/Decompositions_Signal_Image_Processing/Short_Time_Fourier_Transforms.ipynb
+      - title: Wavelets
+      - file: ./Lecture_Notes_and_Code/Decompositions_Signal_Image_Processing/Wavelets.ipynb
 site:
   template: book-theme
   # options:
