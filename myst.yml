@@ -33,11 +33,3 @@ site:
   #   favicon: favicon.ico
   #   logo: site_logo.png
 
-parse:
-  myst_enable_extensions:
-    - amsmath
-    
-sphinx:
-  config:
-    amsmath_number_equations: false
-  
