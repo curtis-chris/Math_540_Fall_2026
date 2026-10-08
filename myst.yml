@@ -27,6 +27,8 @@ project:
       - file: ./Lecture_Notes_and_Code/Regression_and_Sparsity/Regression_and_Regularization_Part_One.ipynb
       - title: Histograms and Bias/Variance Analysis
       - file: ./Lecture_Notes_and_Code/Regression_and_Sparsity/Histograms_and_Bias_Variance_Analysis.ipynb
+      - title: Logistic Regression, Classification, and Optimization
+      - file: ./Lecture_Notes_and_Code/Regression_and_Sparsity/Classification_and_Logistic_Regression.ipynb
     - title: Signals, Processing, and Decomposition
       children:
       - title: Fourier Transforms and Series
