@@ -2,7 +2,7 @@
 
 **Data:** $\{Y_t\}_{t=1}^{T}$ with $Y_t \in \{1, \ldots, K\}$, where $K \in \mathbb{N}$ is the "vocabulary" size and each $Y_t$ takes on the value of a particular "word".  Again, this is downstream of some tokenization process.
 
-**Goal.** We want describe $\mathbb{P}(Y_{t}=j)$ at *time* $t$ evolves.  If we look at even one time step, we see that 
+**Goal.** We want to sdescribe $\mathbb{P}(Y_{t}=j)$ at *time* $t$ evolves.  If we look at even one time step, we see that 
 
 $$
 \mathbb{P}(Y_{2}=j) = \sum_{l=1}^{K}\mathbb{P}(Y_{2}=j|Y_{1}=l)\mathbb{P}(Y_{1}=l). 
