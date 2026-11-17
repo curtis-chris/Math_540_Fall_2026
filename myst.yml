@@ -5,46 +5,46 @@ project:
   title: Mathematical Tools in Data Science and Machine Learning 
   description:  These are the course notes for MATH 540 at San Diego State University.
   # keywords: []
+  output_matplotlib_strings: remove
   # authors: []
   github: https://github.com/curtis-chris/Math_540_Fall_2026
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   toc:
-    - title: Mathematical Tools in Data Science and Machine Learning 
     - file: ./chapter_files/index.md
-    - title: Linear Algebra and Unsupervised Learning 
+    - title: Linear Algebra and Unsupervised Learning
       children:
-      - title: Linear Algebra for the Mathematical Data Scientist  
-      - file: ./Lecture_Notes_and_Code/Unsupervised_Learning/Linear_Algebra_for_Data_Scientists.ipynb
-      - title: Image Compression via Singular Value Decomposition 
-      - file: ./Lecture_Notes_and_Code/Unsupervised_Learning/SVD_and_Image_Analysis.ipynb
-      - title: Introduction to k-Means Clustering 
-      - file: ./Lecture_Notes_and_Code/Unsupervised_Learning/Applications_of_the_SVD_and_Cluster_Analysis.ipynb
+        - file: ./Lecture_Notes_and_Code/Unsupervised_Learning/Linear_Algebra_for_Data_Scientists.ipynb
+          title: Linear Algebra for the Mathematical Data Scientist
+        - file: ./Lecture_Notes_and_Code/Unsupervised_Learning/SVD_and_Image_Analysis.ipynb
+          title: Image Compression via Singular Value Decomposition
+        - file: ./Lecture_Notes_and_Code/Unsupervised_Learning/Applications_of_the_SVD_and_Cluster_Analysis.ipynb
+          title: Introduction to k-Means Clustering
     - title: Statistics and Supervised Learning
       children:
-      - title: Probability for the Data Scientist 
-      - file: ./Lecture_Notes_and_Code/Regression_and_Sparsity/Probability_for_the_Data_Scientist.ipynb
-      - title: Introduction to Statistics and Regression
-      - file: ./Lecture_Notes_and_Code/Regression_and_Sparsity/Regression_and_Regularization_Part_One.ipynb
-      - title: Histograms and Bias/Variance Analysis
-      - file: ./Lecture_Notes_and_Code/Regression_and_Sparsity/Histograms_and_Bias_Variance_Analysis.ipynb
-      - title: Logistic Regression, Classification, and Optimization
-      - file: ./Lecture_Notes_and_Code/Regression_and_Sparsity/Classification_and_Logistic_Regression.ipynb
-    - title: Neural Networks and Machine Learning 
+        - file: ./Lecture_Notes_and_Code/Regression_and_Sparsity/Probability_for_the_Data_Scientist.ipynb
+          title: Probability for the Data Scientist
+        - file: ./Lecture_Notes_and_Code/Regression_and_Sparsity/Regression_and_Regularization_Part_One.ipynb
+          title: Introduction to Statistics and Regression
+        - file: ./Lecture_Notes_and_Code/Regression_and_Sparsity/Histograms_and_Bias_Variance_Analysis.ipynb
+          title: Histograms and Bias/Variance Analysis
+        - file: ./Lecture_Notes_and_Code/Regression_and_Sparsity/Classification_and_Logistic_Regression.ipynb
+          title: Logistic Regression, Classification, and Optimization
+    - title: Neural Networks and Machine Learning
       children:
-      - title: Introduction to Neural Networks and Deep Learning
-      - file: ./Lecture_Notes_and_Code/Machine_Learning/Neural_Networks_and_PyTorch.ipynb
-      - title: Convolutional Neural Networks and Image Processing
-      - file: ./Lecture_Notes_and_Code/Machine_Learning/Convolutional_Networks_and_Pooling_Layers.ipynb
-      - title: A Brief Introduction to Stochastic Processes via Markov Chains
-      - file: ./Lecture_Notes_and_Code/Machine_Learning/markov_chains_notes.md
+        - file: ./Lecture_Notes_and_Code/Machine_Learning/Neural_Networks_and_PyTorch.ipynb
+          title: Introduction to Neural Networks and Deep Learning
+        - file: ./Lecture_Notes_and_Code/Machine_Learning/Convolutional_Networks_and_Pooling_Layers.ipynb
+          title: Convolutional Neural Networks and Image Processing
+        - file: ./Lecture_Notes_and_Code/Machine_Learning/markov_chains_notes.md
+          title: A Brief Introduction to Stochastic Processes via Markov Chains
     - title: Signals, Processing, and Decomposition
       children:
-      - title: Fourier Transforms and Series
-      - file: ./Lecture_Notes_and_Code/Decompositions_Signal_Image_Processing/Fourier_Series_and_Transforms.ipynb
-      - title: Short Time Fourier Transforms and Signal Processing
-      - file: ./Lecture_Notes_and_Code/Decompositions_Signal_Image_Processing/Short_Time_Fourier_Transforms.ipynb
-      - title: Wavelets
-      - file: ./Lecture_Notes_and_Code/Decompositions_Signal_Image_Processing/Wavelets.ipynb
+        - file: ./Lecture_Notes_and_Code/Decompositions_Signal_Image_Processing/Fourier_Series_and_Transforms.ipynb
+          title: Fourier Transforms and Series
+        - file: ./Lecture_Notes_and_Code/Decompositions_Signal_Image_Processing/Short_Time_Fourier_Transforms.ipynb
+          title: Short Time Fourier Transforms and Signal Processing
+        - file: ./Lecture_Notes_and_Code/Decompositions_Signal_Image_Processing/Wavelets.ipynb
+          title: Wavelets
 site:
   template: book-theme
   # options:
