@@ -35,7 +35,7 @@ So, now if we want to describe $\mathbb{P}(Y_{3}=j)$, then we can write
 
 \begin{align*}
 \mathbb{P}(Y_{3}=j) = & \sum_{l_{1}=1}^{K}\sum_{l_{2}=1}^{K}\mathbb{P}\left(Y_{3}|Y_{1}=l_{1},Y_{2}=l_{2}\right)\mathbb{P}\left(Y_{1}=l_{1},Y_{2}=l_{2}\right)\\
-\sum_{l_{1}=1}^{K}\sum_{l_{2}=1}^{K}\mathbb{P}\left(Y_{3}|Y_{1}=l_{1},Y_{2}=l_{2}\right)\mathbb{P}\left(Y_{2}=l_{2}|Y_{1}=l_{1}\right)\mathbb{P}\left(Y_{1}=l_{1}\right)
+= & \sum_{l_{1}=1}^{K}\sum_{l_{2}=1}^{K}\mathbb{P}\left(Y_{3}|Y_{1}=l_{1},Y_{2}=l_{2}\right)\mathbb{P}\left(Y_{2}=l_{2}|Y_{1}=l_{1}\right)\mathbb{P}\left(Y_{1}=l_{1}\right).
 \end{align*}
 
 Following our nose, we then see for general time $t>1$, 
