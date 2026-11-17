@@ -9,10 +9,10 @@ $$
 $$
 where we have used 
 $$
-p(X, Y) =
+\mathbb{P}(X, Y) =
 \begin{cases}
-p(X \mid Y)\, p(Y) \\
-p(Y \mid X)\, p(X),
+\mathbb{P}(X \mid Y)\, \mathbb{P}(Y) \\
+\mathbb{P}(Y \mid X)\, \mathbb{P}(X),
 \end{cases}
 $$
 to introduce the conditioning of the state $Y_{2}=j$ on the prior state at $Y_{1}$.  To go further, we need to make use of the: 
@@ -22,13 +22,13 @@ to introduce the conditioning of the state $Y_{2}=j$ on the prior state at $Y_{1
 Treating $(X, Y)$ given $Z$ as a whole distribution in its own right,
 
 $$
-p(x, y, z) = p(x, y \mid z)\, p(z) = p(x \mid y, z)\, p(y \mid z)\, p(z).
+\mathbb{P}(x, y, z) = \mathbb{P}(x, y \mid z)\, \mathbb{P}(z) = \mathbb{P}(x \mid y, z)\, \mathbb{P}(y \mid z)\, \mathbb{P}(z).
 $$
 
 **Show:**
 
 $$
-p(x, y, z) = p(z \mid x, y)\, p(x \mid y)\, p(y).
+\mathbb{P}(x, y, z) = \mathbb{P}(z \mid x, y)\, \mathbb{P}(x \mid y)\, p(y).
 $$
 
 So, now if we want to describe $\mathbb{P}(Y_{3}=j)$, then we can write 
@@ -55,7 +55,7 @@ Thus if we try to keep the full history of our data, then as we move forward in 
 **Markov assumption / approximation:**
 
 $$
-p(Y_t \mid Y_{1:t-1}) = p(Y_t \mid Y_{t-1}).
+\mathbb{P}(Y_t \mid Y_{1:t-1}) = \mathbb{P}(Y_t \mid Y_{t-1}).
 $$
 
 - History is encoded up to the prior step.
@@ -68,13 +68,13 @@ $$
 **Stationarity:** we are talking about
 
 $$
-p(Y_t = j \mid Y_{t-1} = \ell), \qquad j, \ell \in \{1, \ldots, K\}.
+\mathbb{P}(Y_t = j \mid Y_{t-1} = \ell), \qquad j, \ell \in \{1, \ldots, K\}.
 $$
 
 If $Y_{1:T}$ is "stationary", then
 
 $$
-p(Y_t = j \mid Y_{t-1} = \ell) = P_{j\ell},
+\mathbb{P}(Y_t = j \mid Y_{t-1} = \ell) = P_{j\ell},
 $$
 
 i.e. it does not depend on "time" or position in the sequence.
@@ -109,22 +109,22 @@ So now we have
 
 $$
 \begin{aligned}
-p(Y_2 = j, Y_1 = \ell) &= p(Y_2 = j \mid Y_1 = \ell)\, p(Y_1 = \ell) \\
-&= P_{j\ell}\, p(Y_1 = \ell),
+\mathbb{P}(Y_2 = j, Y_1 = \ell) &= \mathbb{P}(Y_2 = j \mid Y_1 = \ell)\, \mathbb{P}(Y_1 = \ell) \\
+&= P_{j\ell}\, \mathbb{P}(Y_1 = \ell),
 \end{aligned}
 $$
 
 and so
 
 $$
-p(Y_2 = j) = \sum_{\ell=1}^{K} P_{j\ell}\, p(Y_1 = \ell).
+\mathbb{P}(Y_2 = j) = \sum_{\ell=1}^{K} P_{j\ell}\, \mathbb{P}(Y_1 = \ell).
 $$
 
 Denote
 
 $$
-\vec{\pi}_1 = \{p(Y_1 = \ell)\}_{\ell=1}^{K}, \qquad
-\vec{\pi}_2 = \{p(Y_2 = j)\}_{j=1}^{K}.
+\vec{\pi}_1 = \{\mathbb{P}(Y_1 = \ell)\}_{\ell=1}^{K}, \qquad
+\vec{\pi}_2 = \{\mathbb{P}(Y_2 = j)\}_{j=1}^{K}.
 $$
 
 Then
