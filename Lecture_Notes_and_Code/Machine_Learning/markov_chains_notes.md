@@ -180,7 +180,7 @@ then $\mathbf{P}^{t} \vec{\pi}_e = \vec{\pi}_e$, and $\vec{\pi}_e$ is called an 
 For $\vec{b} = (1, 1, \ldots, 1)^{\top}$ we have $\vec{b}^{\top} \mathbf{P} = \vec{b}^{\top}$, since the columns of $\mathbf{P}$ sum to one. Hence $\lambda = 1$ is always an eigenvalue of $\mathbf{P}$.
 :::
 
-:::{prf:proof} All eigenvalues satisfy $|\lambda| \le 1$
+:::{prf:proof} All eigenvalues have modulus at most one
 Suppose $\mathbf{P}\vec{\pi} = \lambda \vec{\pi}$. We claim $|\lambda| \le 1$. Componentwise,
 
 $$
@@ -239,7 +239,7 @@ $$
 
 - The flow $j \to i$ "=" the flow $i \to j$. $\Rightarrow$ So much of chemistry.
 
-:::{prf:proof} Detailed balance implies $\vec{\pi}$ is an equilibrium distribution
+:::{prf:proof} Detailed balance implies equilibrium
 $$
 \sum_{j} P_{ij}\, \pi_j = \sum_{j} P_{ji}\, \pi_i = \pi_i
 \quad \Longrightarrow \quad
