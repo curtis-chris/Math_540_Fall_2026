@@ -88,7 +88,7 @@ $$
 or equivalently,
 
 $$
-\sum_{j=1}^{K} p(Y_t = j \mid Y_{t-1} = \ell) = 1.
+\sum_{j=1}^{K} \mathbb{P}(Y_t = j \mid Y_{t-1} = \ell) = 1.
 $$
 
 **Vocabulary $\to$ graph:**
