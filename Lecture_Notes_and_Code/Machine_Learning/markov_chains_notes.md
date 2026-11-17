@@ -1,46 +1,21 @@
 # Markov Chains as a Template Problem for Stochastic Sequential Data 
 
-## Setup: Tokens and Sequences
+**Data:** $\{Y_t\}_{t=1}^{T}$ with $Y_t \in \{1, \ldots, K\}$, where $K \in \mathbb{N}$ is the "vocabulary" size and each $Y_t$ takes on the value of a particular "word".  Again, this is downstream of some tokenization process.
 
-Assuming prior tokenization, i.e.
-
-$$
-\{\vec{x}_t\} \longrightarrow \{\vec{x}'_t\}
-$$
-
-where $\{\vec{x}_t\}$ is the **data** and $\{\vec{x}'_t\}$ are the **"tokens"**, with $\vec{x}'_t \in \mathbb{R}^D$ (who knows what $D$ is?).
-
-**Variable length:** the data are $\{\vec{x}_t\}_{t=0}^{T}$, where $T$ can be arbitrary.
-
-**Output:** the output can depend on the task:
-
-- **Vec-2-Seq:** $\vec{x}' \longrightarrow \{\vec{y}_t\}_{t=1}^{T}$ (generation)
-- **Seq-2-Vec:** $\{\vec{x}_t\}_{t=1}^{T} \longrightarrow \vec{y}'$ (classification)
-- **Seq-2-Seq:** $\{\vec{x}_t\}_{t=1}^{T} \longrightarrow \{\vec{y}_t\}_{t=1}^{T'}$, where $T = T'$ is *aligned* and $T \neq T'$ is *unaligned*.
-
----
-
-## The Template Problem
-
-**Data:** $\{Y_t\}_{t=1}^{T}$ with $Y_t \in \{1, \ldots, K\}$, where $K \in \mathbb{N}$ is the "vocabulary" size and each $Y_t$ is a "word".
-
-Again, this is downstream of some tokenization process.
-
-**Goal.** We want
+**Goal.** We want describe $\mathbb{P}(Y_{t}=j)$ at *time* $t$ evolves.  If we look at even one time step, we see that 
 
 $$
-p(Y_1, \ldots, Y_T) \equiv p(Y_{1:T}) \qquad \text{(discrete probability)}.
+\mathbb{P}(Y_{2}=j) = \sum_{l=1}^{K}\mathbb{P}(Y_{2}=j|Y_{1}=l)\mathbb{P}(Y_{1}=l). 
 $$
-
-In general,
-
+where we have used 
 $$
 p(X, Y) =
 \begin{cases}
 p(X \mid Y)\, p(Y) \\
-p(Y \mid X)\, p(X).
+p(Y \mid X)\, p(X),
 \end{cases}
 $$
+to introduce the conditioning of the state $Y_{2}=j$ on the prior state at $Y_{1}$.  To go further, we need to make use of the: 
 
 ### Chain rule
 
@@ -56,23 +31,26 @@ $$
 p(x, y, z) = p(z \mid x, y)\, p(x \mid y)\, p(y).
 $$
 
-So,
+So, now if we want to describe $\mathbb{P}(Y_{3}=j)$, then we can write 
+
+\begin{align*}
+\mathbb{P}(Y_{3}=j) = & \sum_{l_{1}=1}^{K}\sum_{l_{2}=1}^{K}\mathbb{P}\left(Y_{3}|Y_{1}=l_{1},Y_{2}=l_{2}\right)\mathbb{P}\left(Y_{1}=l_{1},Y_{2}=l_{2}\right)\\
+\sum_{l_{1}=1}^{K}\sum_{l_{2}=1}^{K}\mathbb{P}\left(Y_{3}|Y_{1}=l_{1},Y_{2}=l_{2}\right)\mathbb{P}\left(Y_{2}=l_{2}|Y_{1}=l_{1}\right)\mathbb{P}\left(Y_{1}=l_{1}\right)
+\end{align*}
+
+Following our nose, we then see for general time $t>1$, 
 
 $$
-\begin{aligned}
-p(Y_{1:T}) &= p(Y_1, Y_{2:T}) \\
-&= p(Y_1)\, p(Y_{2:T} \mid Y_1) \\
-&= p(Y_1)\, p(Y_2 \mid Y_1)\, p(Y_{3:T} \mid Y_1, Y_2) \\
-&\;\;\vdots \\
-&= \left( \prod_{t=2}^{T} p(Y_t \mid Y_{1:t-1}) \right) p(Y_1).
-\end{aligned}
+\mathbb{P}\left(Y_{t}=j\right) = \sum_{l_{1}\cdots l_{t-1}}\mathbb{P}(Y_{t}=j| Y_{1:t-1})\mathbb{P}(Y_{t-1}|Y_{1:t-2})\cdots \mathbb{P}(Y_{2}=l_{2}|Y_{1}=l_{1})\mathbb{P}(Y_{1}=l_{1}),
 $$
+
+where $Y_{1:t} = (Y_{1},\cdots, Y_{t})$.  
 
 ---
 
 ## The Markov Assumption
 
-But that's really hard, so we simplify:
+Thus if we try to keep the full history of our data, then as we move forward in time, that demands using ever more complicated probability distributions conditioned on ever longer pasts.  A natural simplification then is to limit the amount of history that we track.  The most straightforward simplification that still preserves some history is:  
 
 **Markov assumption / approximation:**
 
@@ -84,7 +62,7 @@ $$
 - Therefore,
 
 $$
-p(Y_{1:T}) = p(Y_1) \prod_{t=2}^{T} p(Y_t \mid Y_{t-1}).
+\mathbb{P}(Y_{t}=j) = \sum_{l=1}^{K}\mathbb{P}(Y_{t}=j|Y_{t-1}=l)\mathbb{P}(Y_{t-1}=l).
 $$
 
 **Stationarity:** we are talking about
