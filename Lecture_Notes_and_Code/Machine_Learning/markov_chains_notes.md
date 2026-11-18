@@ -17,7 +17,7 @@ $$
 $$
 to introduce the conditioning of the state $Y_{2}=j$ on the prior state at $Y_{1}$.  To go further, we need to make use of the: 
 
-### Chain rule
+### Chain Rule for Conditional Probabilities
 
 Treating $(X, Y)$ given $Z$ as a whole distribution in its own right,
 
